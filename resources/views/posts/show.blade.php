@@ -13,5 +13,18 @@
         {{ csrf_field() }}
         <button class="btn btn-danger btn-lg d-inline">Delete</button>
     </form>
+    <hr>
+    <ul>
+        @foreach($post->comments as $comment)
+            <li>{{ $comment->body}}</li>
+        @endforeach
+    </ul>
+    <h2>Add Comment</h2>
+    <form action="/posts/{{$post->id}}" method="POST">
+        {{ csrf_field() }}
+        <textarea name="body" class="form-control" rows="6"></textarea>
+        <br>
+        <button class="btn btn-primary btn-md">Add Comment</button>
+    </form>
 </div><!-- /.blog-main -->
 @endsection
