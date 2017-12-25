@@ -22,7 +22,7 @@
       <div class="blog-masthead">
         <div class="container">
           <nav class="nav">
-            <a class="nav-link active" href="#">Home</a>
+            <a class="nav-link active" href="/">Home</a>
             <a class="nav-link" href="/posts/create">New Post</a>
           </nav>
         </div>

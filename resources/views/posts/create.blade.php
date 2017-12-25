@@ -14,6 +14,9 @@
       <textarea name="body" class="form-control" placeholder="Enter Post Body" rows="15"></textarea>
     </div>
     <button type="submit" class="btn btn-primary">Create</button>
+    <hr>
+
+    @include('layouts.errors')
   </form>
 </div>
 @endsection

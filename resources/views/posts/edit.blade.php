@@ -17,6 +17,8 @@
     <input type="hidden" name="_method" value="PUT">
     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
     <button type="submit" class="btn btn-primary">Edit</button>
+    <hr>
+    @include('layouts.errors')
   </form>
 </div>
 @endsection

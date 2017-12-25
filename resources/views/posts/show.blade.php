@@ -8,10 +8,10 @@
       <p>{{ $post->body }}</p>
     </div><!-- /.blog-post -->
     <a href="/posts/{{$post->id}}/edit" class="btn btn-info btn-lg">Edit</a>
-    <form action="/posts/{{$post->id}}" method="POST">
+    <form class="d-inline" action="/posts/{{$post->id}}" method="POST">
         {{ method_field('DELETE') }}
         {{ csrf_field() }}
-        <button>Delete</button>
+        <button class="btn btn-danger btn-lg d-inline">Delete</button>
     </form>
 </div><!-- /.blog-main -->
 @endsection
