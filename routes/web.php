@@ -22,4 +22,4 @@ Route::delete('posts/{post}', 'PostsController@destroy');
 
 Route::post('/posts/{post}', 'CommentsController@store');
 
-// Route::put('articles/{article}', 'ArticleController@update');
+Route::get('/posts/tags/{tag}', 'TagsController@index');

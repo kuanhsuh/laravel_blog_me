@@ -13,9 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        view()->composer('layouts.sidebar', function($view){
+            $view->with('tags', \App\Tag::has('posts')->pluck('name'));
+        });
     }
-
     /**
      * Register any application services.
      *

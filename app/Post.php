@@ -10,4 +10,8 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    function tags()
+    {
+        return $this->hasMany(Tag::class);
+    }
 }
