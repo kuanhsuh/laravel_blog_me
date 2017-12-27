@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Post;
 class PostsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +18,9 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::all();
+        if ($request = request(['month', 'year'])) {
+            $posts->filter($request);
+        }
         return view('posts.index', compact('posts'));
     }
 
@@ -43,7 +50,9 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = request('title');
         $post->body = request('body');
+        $post->user_id = auth()->user()->id;
         $post->save();
+        session()->flash('message', 'Post was successfully created!');
         return redirect('/');
     }
 

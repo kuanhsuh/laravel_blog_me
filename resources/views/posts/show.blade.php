@@ -4,7 +4,7 @@
 <div class="col-sm-8 blog-main">
     <div class="blog-post">
       <h2 class="blog-post-title">{{ $post->title }}</h2>
-      <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }} <a href="#">Mark</a></p>
+      <p class="blog-post-meta">{{ $post->created_at->toFormattedDateString() }} <a href="#">{{$post->user->name}}</a></p>
       <p>{{ $post->body }}</p>
     </div><!-- /.blog-post -->
     <a href="/posts/{{$post->id}}/edit" class="btn btn-info btn-lg">Edit</a>
